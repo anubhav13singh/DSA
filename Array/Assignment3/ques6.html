@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        Given a non-empty array of integers nums, every element appears twice except
+        for one. Find that single one.
+        
+        You must implement a solution with a linear runtime complexity and use only
+        constant extra space.
+        
+        Example 1:
+        Input: nums = [2,2,1]
+        Output: 1 
+    </h3>
+    <script>
+         function findSingle(A, ar_size)
+{
+  
+    // Iterate over every element
+    for (let i = 0; i < ar_size; i++) {
+  
+        // Initialize count to 0
+        let count = 0;
+  
+        for (let j = 0; j < ar_size; j++) {
+  
+            // Count the frequency
+            // of the element
+            if (A[i] == A[j]) {
+                count++;
+            }
+        }
+  
+        // if the frequency of the
+        // element is one
+        if (count == 1) {
+            return A[i];
+        }
+    }
+  
+    // if no element exist at most once
+    return -1;
+}
+    </script>
+</body>
+</html>
