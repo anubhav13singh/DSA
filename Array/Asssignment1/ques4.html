@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+    
+            💡 **.** You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+            
+            Increment the large integer by one and return the resulting array of digits.
+            
+            **Example 1:**
+            Input: digits = [1,2,3]
+            Output: [1,2,4]
+            
+            **Explanation:** The array represents the integer 123.
+            
+            Incrementing by one gives 123 + 1 = 124.
+            Thus, the result should be [1,2,4].
+            
+    </h3>
+
+    <script>
+  
+let digits = [9,8,9,9];
+let n = digits.length;
+
+digits.reverse();
+
+let carry = 0;
+for(let i = 0; i < n; i++)
+{
+    if(i == 0)
+        digits[i] = digits[i] + 1 + carry;
+    
+    else if(carry != 0)
+        digits[i] = digits[i] + carry;
+         
+    carry = parseInt(digits[i] / 10);
+      
+    if(carry != 0)
+        digits[i] = digits[i]%10;
+}
+  
+if(carry != 0)
+    digits[digits.length -1] = carry;
+  
+digits.reverse();
+  
+for(let i = 0; i < n; i++)
+{
+    document.write(digits[i] + " ");
+}
+  
+    </script>
+</body>
+</html>
