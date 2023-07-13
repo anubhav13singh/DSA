@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>
+        Given an array of integers **arr**, the task is to find maximum element of that array using recursion.
+
+**Example 1:**
+
+Input: arr = {1, 4, 3, -5, -4, 8, 6};
+Output: 8
+
+**Example 2:**
+
+Input: arr = {1, 4, 45, 6, 10, -8};
+Output: 45
+    </h4>
+    <script>
+        function findMinRec(A, n)
+{
+// let A = [ 1, 4, 45, 6, -50, 10, 2 ];
+// let n = A.length;
+    if (n == 1)
+        return A[0];
+         
+    return Math.min(A[n - 1],
+        findMinRec(A, n - 1));
+}
+    </script>
+</body>
+</html>

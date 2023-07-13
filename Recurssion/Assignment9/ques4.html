@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Given a number N and a power P, the task is to find the exponent of this number raised to the given power, i.e. N^P.
+
+        **Example 1 :** 
+        
+        Input: N = 5, P = 2
+        
+        Output: 25
+        
+        **Example 2 :**
+        Input: N = 2, P = 5
+        
+        Output: 32</h4>
+        <script>
+            var myPow = function(x, n) {
+			if (n == 0) return 1;
+			if (n<0) {
+					n=-n;
+					x=1/x;
+			}
+
+			return (n%2 == 0) ? myPow(x*x, Math.floor(n/2)) : x*myPow(x*x, Math.floor(n/2)); //x**n
+	};
+        </script>
+</body>
+</html>

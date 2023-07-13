@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Given a string, count total number of consonants in it. A consonant is an English alphabet character that is not vowel (a, e, i, o and u). Examples of constants are b, c, d, f, and g.</h4>
+    <pre>Input : abc de
+        Output : 3
+        There are three consonants b, c and d.
+        
+        Input : geeksforgeeks portal
+        Output : 12</pre>
+        <script>
+            function isConsonant(ch)
+      {
+        // To handle lower case
+        ch = ch.toUpperCase();
+  
+        console.log(ch);
+  
+        return (
+          !(ch == "A" || ch == "E" || ch == "I" || ch == "O" || ch == "U") &&
+          ch.match(/[A-Z]/i)
+        );
+      }
+  
+      function totalConsonants(str) {
+        var count = 0;
+        for (var i = 0; i < str.length; i++)
+          // To check is character is Consonant
+          if (isConsonant(str[i])) ++count;
+        return count;
+      }
+        </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h4>Given an integer `n`, return *`true` if it is a power of three. Otherwise, return `false`*.
+
+    An integer `n` is a power of three, if there exists an integer `x` such that `n == 3x`.
+    
+    **Example 1:**</h4> 
+    <script>
+//        let isPowerOfThree = function(n) {
+//     if (n === 0) return false;
+//     if (n === 1) return true;
+    
+//     if (!(n%3)) return isPowerOfThree(n/3);
+    
+//     return false;
+// }; 
+let isPowerOfThree = function(n){
+    if(n%3 == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+}
+n= 20;
+console.log(isPowerOfThree(n));
+
+    </script>
+</body>
+</html>

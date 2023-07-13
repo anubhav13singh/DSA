@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>We are given a string S, we need to find count of all contiguous substrings starting and ending with same character.</h4>
+    <pre>Input  : S = "abcab"
+        Output : 7
+        There are 15 substrings of "abcab"
+        a, ab, abc, abca, abcab, b, bc, bca
+        bcab, c, ca, cab, a, ab, b
+        Out of the above substrings, there
+        are 7 substrings : a, abca, b, bcab,
+        c, a and b.
+        
+        Input  : S = "aba"
+        Output : 4
+        The substrings are a, b, a and aba</pre>
+        <script>
+            const countSubstrings = function(s, t) {
+    const count1 = countAllSubstr(s);
+    const count2 = countAllSubstr(t);
+    
+    let res = 0;
+    
+    for (const [substr1, freq1] of count1) {
+       for (const [substr2, freq2] of count2) {
+           
+           if (differByOneChar(substr1, substr2)) {
+               res += freq1 * freq2;
+           }
+       }
+    }
+    
+    return res;
+        </script>
+</body>
+</html>

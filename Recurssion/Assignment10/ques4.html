@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Given a string calculate length of the string using recursion.</h4>
+    <script>
+         function recLen(str)
+    {
+   
+        if (str == "")
+            return 0;
+        else
+            return recLen(str.substring(1)) + 1;
+    }
+    let name = 'anubhav';
+    console.log(name.length);
+    
+    </script>
+</body>
+</html>
