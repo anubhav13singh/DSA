@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h4>Given two integer arrays nums1 and nums2, return an array of their intersection. Each element in the result must be unique and you may return the result in any order.</h4> 
+   <pre>Input: nums1 = [1,2,2,1], nums2 = [2,2]
+    Output: [2]
+    </pre>
+    <script>
+        let intersection = function (nums1, nums2) {
+  let empty = [];
+  for (let i = 0; i < nums1.length; i++) {
+    for (let j = 0; j < nums2.length; j++) {
+      if (nums1[i] === nums2[j]) {
+        empty.push(nums1[i]);
+      }
+    }
+  }
+  return [...new Set(empty)];
+};
+
+// var intersection = function(nums1, nums2) {
+//     nums1 = nums1.sort((a,b) => a-b)
+//     nums2 = nums2.sort((a,b) => a-b)
+//     let ans = []
+
+//     let i = j = 0
+//     let last
+//     while( i < nums1.length && j < nums2.length ){
+//         if(nums1[i] === nums2[j]){
+//             if( nums1[i] !== last ){
+//                 ans.push(nums1[i])
+//                 last = nums1[i]
+//             }
+//             i++
+//             j++
+//         }else if(nums1[i] > nums2[j]) j++
+//         else i++
+//     }
+
+//     return ans
+// };
+    </script>
+</body>
+</html>

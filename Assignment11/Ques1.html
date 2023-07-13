@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h4>Given a non-negative integer x, return the square root of x rounded down to the nearest integer. The returned integer should be non-negative as well.</h4>
+    <script>
+        var mySqrt = (x) => {
+    let left = 0, 
+       right=x, 
+       ans = 0; 
+    while (left<=right){ 
+        let mid = Math.floor((left+right)/2);
+
+        if (mid*mid == x){ 
+            return mid; 
+        } else if (mid*mid < x) {
+            ans = mid;  
+            left = mid + 1; 
+        } else {
+            right = mid - 1; 
+        }
+    }
+    return ans; 
+};
+x = 16;
+console.log(mySqrt(x));
+    </script>
+</body>
+</html>

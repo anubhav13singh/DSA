@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h4>Given an array nums containing n distinct numbers in the range [0, n], return the only number in the range that is missing from the array</h4> 
+   <pre>Input: nums = [3,0,1]
+    Output: 2
+    Explanation: n = 3 since there are 3 numbers, so all numbers are in the range [0,3]. 2 is the missing number in the range since it does not appear in nums.
+    </pre>
+    <script>
+        function findPeakElement(nums , target) {
+    let start = 0;
+    let end = nums.length - 1;
+    while (start <= end) {
+        let mid = Math.floor((start + end) / 2);
+
+        if(nums[mid] == target) {
+            return mid;
+        } 
+        else if(nums[mid] > target) {
+            end = mid-1;
+        } else {
+            start = mid+1;
+        }
+    }
+    return start;
+};
+arr = [2,3,5,7,8]
+target = 4
+console.log(findPeakElement(arr , target));
+    </script>
+</body>
+</html>
